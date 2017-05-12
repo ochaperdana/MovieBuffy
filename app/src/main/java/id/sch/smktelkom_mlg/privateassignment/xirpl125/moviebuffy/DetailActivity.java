@@ -86,7 +86,7 @@ public class DetailActivity extends AppCompatActivity {
                             textViewTitle.setText(o.getString("title"));
                             textViewRelease.setText("Release Date : " + "\n" + o.getString("release_date"));
                             textViewDesc.setText("Overview : " + "\n" + o.getString("overview"));
-                            textViewAnother.setText("Vote Avergae : " + "\n" + o.getString("vote_average"));
+                            textViewAnother.setText("Vote Average : " + "\n" + o.getString("vote_average"));
                             url = o.getJSONObject("link").getString("url");
                             Glide
                                     .with(DetailActivity.this)

@@ -31,7 +31,7 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
     @Override
     public TopAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.data_item, parent, false);
+                .inflate(R.layout.top_item, parent, false);
         return new TopAdapter.ViewHolder(v);
     }
 
@@ -48,7 +48,7 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, topItem.getTitle() + " selected", Toast.LENGTH_LONG).show();
-                Intent singleBlogIntent = new Intent(context, DetailActivity.class);
+                Intent singleBlogIntent = new Intent(context, TopDetailActivity.class);
                 singleBlogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 singleBlogIntent.putExtra("blog_id", position);
                 context.startActivity(singleBlogIntent);

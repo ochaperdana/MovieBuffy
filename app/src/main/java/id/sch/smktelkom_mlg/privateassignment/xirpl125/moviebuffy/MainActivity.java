@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        changePage(R.id.nav_camera);
-        navigationView.setCheckedItem(R.id.nav_camera);
+        changePage(R.id.nav_popular);
+        navigationView.setCheckedItem(R.id.nav_popular);
     }
 
 
@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_upcoming) {
             fragment = new UpcomingFragment();
             setTitle("Upcoming Movies");
-        } else if (id == R.id.nav_manage) {
-
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

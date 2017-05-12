@@ -36,7 +36,7 @@ public class TopDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         mKey = getIntent().getExtras().getInt("blog_id");
         loadRecyclerViewData();
@@ -74,10 +74,10 @@ public class TopDetailActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATA,
                 new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String ab) {
+                    public void onResponse(String ac) {
                         progressDialog.dismiss();
                         try {
-                            JSONObject jsonObject = new JSONObject(ab);
+                            JSONObject jsonObject = new JSONObject(ac);
                             JSONArray array = jsonObject.getJSONArray("results");
                             JSONObject o = array.getJSONObject(mKey);
 
@@ -85,7 +85,7 @@ public class TopDetailActivity extends AppCompatActivity {
                             textViewTitle.setText(o.getString("title"));
                             textViewRelease.setText("Release Date " + "\n" + o.getString("release_date"));
                             textViewDesc.setText("Overview " + "\n" + o.getString("overview"));
-                            textViewAnother.setText("Vote Avergae : " + "\n" + o.getString("vote_average"));
+                            textViewAnother.setText("Vote Average : " + "\n" + o.getString("vote_average"));
                             url = o.getJSONObject("link").getString("url");
                             Glide
                                     .with(TopDetailActivity.this)

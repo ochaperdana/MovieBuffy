@@ -24,7 +24,9 @@
         <activity
             android:name=".DetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".TopDetailActivity"></activity>
+        <activity
+            android:name=".TopDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

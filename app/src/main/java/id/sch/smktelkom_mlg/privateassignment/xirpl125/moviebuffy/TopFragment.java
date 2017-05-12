@@ -34,7 +34,7 @@ public class TopFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
-    private List<DataItem> dataItems;
+    private List<TopItem> topItems;
 
 
     public TopFragment() {
@@ -51,7 +51,7 @@ public class TopFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
-        dataItems = new ArrayList<>();
+        topItems = new ArrayList<>();
         loadRecyclerViewData();
         return view;
     }
@@ -73,13 +73,13 @@ public class TopFragment extends Fragment {
 
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject o = array.getJSONObject(i);
-                                DataItem item = new DataItem(
+                                TopItem item = new TopItem(
                                         o.getString("poster_path"),
                                         o.getString("title")
                                 );
-                                dataItems.add(item);
+                                topItems.add(item);
                             }
-                            adapter = new DataAdapter(dataItems, getActivity().getApplicationContext());
+                            adapter = new TopAdapter(topItems, getActivity().getApplicationContext());
                             recyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
