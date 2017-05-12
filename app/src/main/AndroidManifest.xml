@@ -27,6 +27,7 @@
         <activity
             android:name=".TopDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".UpcomingDetailActivity"></activity>
     </application>
 
 </manifest>
