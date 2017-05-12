@@ -21,9 +21,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DetailActivity extends AppCompatActivity {
-
-    private static final String URL_DATA = "https://api.themoviedb.org/3/movie/popular?api_key=1fcf9e5f6d9c565825c3c7435ddfffea";
+public class TopDetailActivity extends AppCompatActivity {
+    private static final String URL_DATA = "https://api.themoviedb.org/3/movie/top_rated?api_key=1fcf9e5f6d9c565825c3c7435ddfffea";
     public TextView textViewTitle;
     public TextView textViewDesc;
     public TextView textViewRelease;
@@ -35,7 +34,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_top_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -84,12 +83,12 @@ public class DetailActivity extends AppCompatActivity {
 
                             setTitle("");
                             textViewTitle.setText(o.getString("title"));
-                            textViewRelease.setText("Release Date : " + "\n" + o.getString("release_date"));
-                            textViewDesc.setText("Overview : " + "\n" + o.getString("overview"));
+                            textViewRelease.setText("Release Date " + "\n" + o.getString("release_date"));
+                            textViewDesc.setText("Overview " + "\n" + o.getString("overview"));
                             textViewAnother.setText("Vote Avergae : " + "\n" + o.getString("vote_average"));
                             url = o.getJSONObject("link").getString("url");
                             Glide
-                                    .with(DetailActivity.this)
+                                    .with(TopDetailActivity.this)
                                     .load("http://image.tmdb.org/t/p/w500" + o.getString("poster_path"))
                                     .into(imageViewPict);
                         } catch (JSONException e) {

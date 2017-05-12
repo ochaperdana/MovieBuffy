@@ -92,14 +92,14 @@ public class MainActivity extends AppCompatActivity
 
     private void changePage(int id) {
         Fragment fragment = null;
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_popular) {
             // Handle the camera action
             fragment = new PopularFragment();
             setTitle("Popular Movies");
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_top) {
             fragment = new TopFragment();
             setTitle("Top Rated Movies");
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_upcoming) {
             fragment = new UpcomingFragment();
             setTitle("Upcoming Movies");
         } else if (id == R.id.nav_manage) {

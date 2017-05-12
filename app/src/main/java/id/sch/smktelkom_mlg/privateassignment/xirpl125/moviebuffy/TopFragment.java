@@ -29,7 +29,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class TopFragment extends Fragment {
-    private static final String URL_DATA = "https://api.themoviedb.org/3/movie/popular?api_key=1fcf9e5f6d9c565825c3c7435ddfffea&language=en-US&page=1";
+    private static final String URL_DATA = "https://api.themoviedb.org/3/movie/top_rated?api_key=1fcf9e5f6d9c565825c3c7435ddfffea&language=en-US&page=1";
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
